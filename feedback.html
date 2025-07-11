@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback Management</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      background-color: #f5f7fa;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #1e1e2f;
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+    }
+
+    .nav-link {
+      margin: 10px 0;
+      color: #cbd0f7;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: white;
+    }
+
+    .logout {
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid #444;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    .btn {
+      padding: 6px 12px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .btn.view { background-color: #4f46e5; }
+    .btn.reply { background-color: #059669; }
+    .btn.delete { background-color: #dc2626; }
+
+    .feedback-message {
+      max-width: 300px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>MyApp</h2>
+    <a href="index.html" class="nav-link">Dashboard</a>
+    <a href="user.html" class="nav-link">Users</a>
+    <a href="booking.html" class="nav-link">Bookings</a>
+    <a href="feedback.html" class="nav-link">Feedback</a>
+    <a href="#" class="nav-link">Settings</a>
+    <div class="logout">
+      <a href="#" class="nav-link">Logout</a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="header">
+      <h1>Feedback Management</h1>
+      <div class="profile">
+        <span>Hello, Admin</span>
+        <img src="https://i.pravatar.cc/100" alt="Profile"/>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>User Feedback</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Email</th>
+            <th>Feedback</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Jane Doe</td>
+            <td>jane@example.com</td>
+            <td class="feedback-message">Really loved the service. Quick and efficient!</td>
+            <td>2025-07-10</td>
+            <td>
+              <button class="btn view">View</button>
+              <button class="btn reply">Reply</button>
+              <button class="btn delete">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>John Smith</td>
+            <td>john@example.com</td>
+            <td class="feedback-message">Had issues with the delivery time.</td>
+            <td>2025-07-08</td>
+            <td>
+              <button class="btn view">View</button>
+              <button class="btn reply">Reply</button>
+              <button class="btn delete">Delete</button>
+            </td>
+          </tr>
+          <!-- Add more feedback rows here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
